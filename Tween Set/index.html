@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tween</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #1b1b1b;
+      }
+
+      .box {
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+        background: deeppink;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script>
+      // gsap.method(element,vars obj)
+    //   gsap.to(".box", {
+    //     x: 100,
+    //     duration: 2,
+    //     repeat: -1,
+    //   });
+    //   set method
+    gsap.to(".box",{
+        opacity:0,
+        background: "blue",
+    })
+    gsap.to(".box",{
+        opacity:1,
+        background: "limegreen",
+        duration: 3,
+        y:100,
+        repeat: -1,
+        yoyo: true,
+    })
+    </script>
+  </body>
+</html>
