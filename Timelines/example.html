@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controlling Tweens</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #1b1b1b;
+      }
+
+      .box {
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+        background: #ffa31a;
+        border-radius: 100px;
+      }
+
+      .buttons-container {
+        display: flex;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin-left: 10px;
+        outline: none;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <section class="container">
+        <div class="box-container">
+            <h1>Chandana Mandarapu</h1>
+        </div>
+        <section class="buttons-container">
+            <div class="box box1"></div>
+            <div class="box box2"></div>
+            <div class="box box3"></div>
+        </section>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  </body>
+
+  <script>
+
+    let timeLine = gsap.timeline({
+        default:{
+            duration:1,
+        }
+    }).to("h1",{
+        y:-100,
+        color:"white"
+    }).to(".box1",{
+        x:-100,
+        backgroundColor:"deeppink",
+    }).to(".box2",{
+        y: 100,
+        backgroundColor:"papayawhip",
+    }).to(".box3",{
+        x: 100,
+        backgroundColor:"teal",
+    })
+  </script>
+</html>

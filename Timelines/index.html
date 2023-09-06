@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controlling Tweens</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #1b1b1b;
+      }
+
+      .box {
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+        background: #791aff;
+        border-radius: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <div class="box box1"></div>
+      <div class="box box2"></div>
+      <div class="box box3"></div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  </body>
+
+  <script>
+    // let timeLine = gsap.timeline();
+    // timeLine
+    //   .to(".box1", {
+    //     duration: 2,
+    //     scale: 0,
+    //     opacity: 0,
+    //     delay: 1,
+    //   })
+    //   .to(".box2", {
+    //     duration: 2,
+    //     x: -200,
+    //   })
+    //   .to(".box3", {
+    //     duration: 2,
+    //     x: -200,
+    //     borderRadius: 0,
+    //     rotate: 360,
+    //   })
+    //   .set(".box1", {
+    //     duration: 2,
+    //     scale: 1,
+    //     opacity: 1,
+    //   });
+
+    // REFACTORING
+
+    let timeLine = gsap.timeline({
+        defaults:{
+            duration: 1,
+        }
+    });
+    timeLine
+      .to(".box1", {
+        scale: 0,
+        opacity: 0,
+        delay: 1,
+      })
+      .to(".box2", {
+        x: -200,
+      })
+      .to(".box3", {
+        x: -200,
+        borderRadius: 0,
+        rotate: 360,
+      })
+      .set(".box1", {
+        x: 200,
+      }).to(".box1",{
+        scale:1,
+        opacity: 1,
+      })
+  </script>
+</html>
