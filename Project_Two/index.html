@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sketcharia</title>
+    <style>
+        /* Your CSS styles for the project */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Updated styles for the overview section */
+        .overview {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+            color: #fff;
+            text-align: right;
+            padding: 100px;
+            box-sizing: border-box;
+            overflow: hidden; /* Prevent content from overflowing */
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            position: relative;
+            z-index: 1;
+        }
+
+        .welcome {
+            font-size: 36px;
+            margin: 0;
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+
+        .animation-container {
+            position: relative;
+        }
+
+        img.animate-from-right {
+            max-width: 100%;
+            height: auto;
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        .overview-paragraph-box {
+            font-size: 18px;
+            color: #ddd;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        /* Styles for the sketch gallery */
+        .sketch-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sketch {
+            margin: 20px;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .sketch img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s, opacity 0.5s;
+        }
+
+        .sketch:hover img {
+            transform: scale(1.1);
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <section class="overview">
+        <div class="content">
+            <h1 class="welcome">Welcome to Sketcharia</h1>
+            <div class="animation-container">
+                <img src="https://media.istockphoto.com/id/178628010/photo/black-and-white-photo-of-man-playing-guitar.jpg?s=612x612&w=0&k=20&c=XPUmhicy4052w8R9xvHFvUpbqQsS2-S3lPIxbzY9bro=" alt="Animation Image" class="animate-from-right">
+            </div>
+            <div class="overview-paragraph-box">
+                <p>Explore the world of artistry through the power of sketches. Sketcharia is a place where imagination meets expression.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sketch Gallery Section -->
+    <section class="sketch-gallery">
+        <!-- Sketches go here -->
+        <div class="sketch">
+            <img src= "https://media.istockphoto.com/id/178628010/photo/black-and-white-photo-of-man-playing-guitar.jpg?s=612x612&w=0&k=20&c=XPUmhicy4052w8R9xvHFvUpbqQsS2-S3lPIxbzY9bro=" alt="Sketch 1">
+        </div>
+        <div class="sketch">
+            <img src= "https://media.istockphoto.com/id/178628010/photo/black-and-white-photo-of-man-playing-guitar.jpg?s=612x612&w=0&k=20&c=XPUmhicy4052w8R9xvHFvUpbqQsS2-S3lPIxbzY9bro=" alt="Sketch 2">
+        </div>
+        <div class="sketch">
+            <img src= "https://media.istockphoto.com/id/178628010/photo/black-and-white-photo-of-man-playing-guitar.jpg?s=612x612&w=0&k=20&c=XPUmhicy4052w8R9xvHFvUpbqQsS2-S3lPIxbzY9bro=" alt="Sketch 3">
+        </div>
+        <div class="sketch">
+            <img src= "https://media.istockphoto.com/id/178628010/photo/black-and-white-photo-of-man-playing-guitar.jpg?s=612x612&w=0&k=20&c=XPUmhicy4052w8R9xvHFvUpbqQsS2-S3lPIxbzY9bro=" alt="Sketch 4">
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script>
+        // Your GSAP animations and interactivity code goes here
+
+        // Define your GSAP timeline for animations
+        const tl = gsap.timeline();
+
+        // Animation for the overview section
+        tl.from(".welcome", { opacity: 0, y: -50, duration: 1 })
+          .from(".animate-from-right", { opacity: 0, x: "100%", duration: 1 })
+          .from(".overview-paragraph-box", { opacity: 0, x: "-100%", duration: 1 });
+        
+        // Set opacity to 1 after animations
+        tl.to(".welcome, .animate-from-right, .overview-paragraph-box", { opacity: 1 });
+
+        // Your sketch gallery animation (hover effect) is already included in the CSS.
+    </script>
+</body>
+</html>
