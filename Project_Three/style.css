@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.pg1{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: azure;
+    padding: 0 50px;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid white;
+    height: 100px;
+    width: 100%;
+    padding: 0 30px;
+}
+.nav-prt2{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.nav h1{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.nav h3{
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.nav button{
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    color: azure;
+    font-weight: 600;
+    font-size: 18px;
+    border: 1px solid white;
+    border-radius: 6px;
+}
+.container{
+    height: 80%;
+    width: 100%;
+    display: flex;
+}
+.left{
+    height: 100%;
+    width: 50%;
+    padding: 100px 50px;
+    overflow: hidden;
+}
+.left img{
+    height: 90%;
+    width: 90%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.right{
+    /* background-color: red; */
+    height: 100%;
+    width: 50%;
+    padding: 100px 50px;
+    
+
+}
+.right h1{
+    font-size: 100px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.right h1:nth-last-child(1){
+    margin-left: 60px;
+    border-bottom: 2px solid white;
+}
+.right h1 span img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: -40px;
+    border: 3px solid black;
+}
+.right span img :nth-child(1){
+    margin-right: 0;
+}
+.pg2{
+    border-top: 2px solid white;
+    background: linear-gradient(#000,#111,#222,#333);
+    width: 100%;
+    height: 100%;
+}
+.pg2 .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 33px;
+    height: 100vh;
+}
+
+.pg2 .content .card {
+    width: 330px;
+    height: 330px;
+    background-color: red;
+    overflow: hidden; /* Hide overflowing image parts */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease; /* Add a smooth transition for the scale effect */
+}
+
+.pg2 .content .card img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.pg2 .content .card:hover {
+    transform: scale(1.1); 
+}
